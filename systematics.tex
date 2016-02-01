@@ -1,0 +1,32 @@
+\section{Systematic uncertainties}	
+\label{sec:syst}
+
+Most of the sources of systematic uncertainties affect the prediction of both the signal and the background estimates.  They are evaluated separately for the different signal models
+and for each hypothesis for the SUSY particle masses. The theoretical uncertainties on the simulation will affect the signal acceptance, the transfer factors used for the one-lepton and dilepton backgrounds and also the estimates of the rare SM backgrounds.  First of all, the effects of missing higher-order corrections to the simulation are assessed.  We estimate these corrections by varying the renormalization and factorization scale up and down by 50\% in our NLO MC samples.  We also estimate the uncertainties of the NNPDF parton distribution functions and the uncertainty on the strong coupling constant.
+
+The experimental uncertainties affect the acceptance for all simulation-based estimates and again the transfer factors for the data-driven estimates.  The uncertainty on the efficiency to estimate b-tags leads to uncertainties on our estimates between 0.5 and 10\%.  $Z\rightarrow ll$ events are used to measure lepton efficiency scale factors and the uncertainties on those varies between 1 and 2\%.  This effect is also propagated to the final signal and background estimates.  For the signal and the rare SM background estimates also the luminosity uncertainty (4.6\%) is propagated.  The uncertainty in the energy scale of  jets gives rise to a 1–15\% systematic uncertainty.  The uncertainty increases with more stringent kinematic requirements.  The modeling of additional pp collisions that overlap with the event of interest leads to an additional uncertainty. The statistical uncertainties on the simulation and data control regions are also taken into account.  
+
+The modeling of initial-state-radiation plays an important role for the signal modeling in case the stop and the LSP mass are very similar.  It is estimated by looking at the initial-state-radiation in Z events.  For the backgrounds it is relevant for the lost lepton background, where we rely on extra radiation for the events to reach the high jet multiplicity bins. This uncertainty is estimated by propagating the uncertainties on the data-simulation ratio in the e$\mu$ control region described in Sec.~\ref{sec:dilepton}.  For the top-related background an additional uncertainty is added due to possible mismodeling of the top transverse momentum distribution.  For the data-driven background estimates also the uncertainty of the \MET resolution, estimated using the $\gamma$+jets method from Sec.~\ref{sec:dilepton}, is important.  For the W+jets background estimate we also assess the effect of changing the W width by its experimental uncertainty.  The modeling of the neutrino $\pt$ spectrum is checked by looking at different \MET bins for events with a transverse mass consistent with the W hypothesis ($60 \GeV<\MT<120 \GeV$). 
+
+Table~\ref{tab:syst} gives a summary of the effect of these different sources on the total uncertainty for our signal and background estimates. The effects that are estimated using the same methods are considered as correlated during our statistical treatment, the other uncertainties and the statistical uncertainties on the different simulation and data control samples are all taken as uncorrelated.
+
+\begin{table}[htb]
+\centering
+\caption{\label{tab:syst} Summary of the systematic uncertainties for the signal and background estimates with their typical values in individual signal bins. \textcolor{red}{Table needs to be updated.  Also summary for other background estimates needed, asked Indara and John to provide these.} }%, and if the uncertainty can have an effect on the shape.}
+\begin{tabular}{lccc}%c}
+\hline\hline
+Source & \multicolumn{2}{c}{typical size} & correlated \\%& shape effect \\
+ & low $\Delta M$ & high $\Delta M$ & \\%& \\
+\hline
+Signal sample statistics & 10--35\% & 1--10\% & ---  \\%& --- \\
+Luminosity & 4.6\% & 4.6\% & $\checkmark$  \\%& --- \\
+Trigger & 1\% & 1\% & $\checkmark$  \\%& --- \\
+System recoil(``ISR'') & 1--20\% & 1--7\% & $\checkmark$ \\%& $\checkmark$ \\
+Jet energy scale & 3--25\% & 1--10\% & $\checkmark$ \\%& $\checkmark$ \\
+Renormalization and factorization scale & 1--5\% & 1--3\% & $\checkmark$ \\%& $\checkmark$ \\
+b-tagging scale factors & 1--7\% & 1--4\% & $\checkmark$ \\%& $\checkmark$ \\
+Lepton efficiency & 1--3\% & 1--3\% & $\checkmark$ \\%& $\checkmark$ \\
+Lepton veto efficiency & 3\% & 3\% & --- \\%& --- \\
+\hline\hline
+\end{tabular}
+\end{table}

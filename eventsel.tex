@@ -1,0 +1,145 @@
+\section{Event samples, reconstruction, and selection}
+\subsection{Object definition and event preselection}
+\label{sec:presel}
+The particle-flow (PF) algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001} is used to reconstruct and 
+identify each individual particle with an optimized combination of information from the various elements of the CMS detector.
+
+The majority of data events are selected using trigger that requires large missing transverse momentum. The missing transverse momentum 
+vector \ptvecmiss is defined as the projection on the plane perpendicular to the beams of the negative vector sum of the momenta of all 
+reconstructed particles in an event. Its magnitude is referred to as \ETmiss. In the trigger selection, $\ETmiss>170\GeV$ is required. 
+Use of this trigger alone introduces a small inefficiency with respect to the offline selection of $\MET > 250\GeV$. To recover the efficiency, 
+additional triggers are used. These triggers require presence of at least one lepton (electron or muon) with transverse momentum (\pt) 
+requirements of greater than $23\GeV$ for the muon and $20\GeV$ for the electron. The combined trigger efficiency, as measured with a data 
+sample of events with large scalar sum of jet transverse momenta ($H_{T}$), varies between XX\% and YY\%(XX\% and YY\%) for events containing 
+electrons (muons), each with an uncertainty of about XX\%.
+
+The offline selection requires events to have exactly one lepton with $\pt > 20 \GeV$ and $\abs{\eta} < 2.4$ ($\abs{\eta} < 1.442$) 
+for muons (electrons). Electrons in the forward region of the detector are not used due to larger backgrounds. 
+Electron candidates are reconstructed starting from a cluster of energy deposits in the
+electromagnetic calorimeter. The cluster is then matched to a reconstructed track. The electron selection is based on the shower shape,
+track-cluster matching, and consistency between the cluster energy and the track momentum~\cite{Khachatryan:2015hwa}. Muon candidates are 
+reconstructed by performing a global fit that requires consistent hit patterns in the tracker and the muon system~\cite{MUOART}.
+
+Leptons are required to be isolated from other activity in the event. A measure of lepton isolation is the scalar \pt\ sum
+ ($\pt^\text{sum}$) of all PF particles not associated with the lepton within a cone of radius 
+$\Delta R \equiv\sqrt{\smash[b]{(\Delta\eta)^2+(\Delta\phi)^2}}$ dependent on the lepton \pt\:
+\begin{align}
+\centering
+  \Delta R &=\begin{cases}
+    0.2, & \pt^{\text{lep}}\leq 50\,\GeV\\
+    \frac{10\,\GeV}{\pt^{\text{lep}}}, & 50 \lt\ \pt^{\text{lep}} \le\ 200\,\GeV\\
+    0.05, & \pt^{\text{lep}}\geq 200\,\GeV,
+  \end{cases}\label{eq:miniIso}
+\end{align}
+where $\Delta \eta$ ($\Delta \phi$) is the distance in $\eta$ ($\phi$) between the directions of the lepton and the PF particle at 
+the primary interaction vertex~\cite{TRK-11-001}. The average contribution of particles from additional \Pp\Pp\ interactions in the 
+same or nearby bunch crossings (pileup) is estimated and subtracted from the $\pt^\text{sum}$ quantity. The isolation requirement is
+$\pt^\text{sum} <  \min(5\GeV,\, 0.1 \cdot \pt^{\ell})$. Typical lepton identification and isolation efficiencies, measured in
+samples of $\ensuremath{\cPZ/\Pgg^\star} \to \ell \ell$ events, are XX\% for electrons and YY\% for muons, with variations at the level of 
+a few percent depending on \pt\ and $\eta$.
+
+The PF particles are clustered to form jets using the anti-\kt clustering algorithm~\cite{antikt} with a distance parameter of 0.5, as 
+implemented in the {\FASTJET} package~\cite{Cacciari:2011ma}. The contribution to the jet energy from pileup is estimated on an 
+event-by-event basis using the jet area method described in \reference~\cite{cacciari-2008-659}, and is subtracted from the overall jet \pt.
+Jets from pileup interactions are suppressed using a multivariate discriminant based on the multiplicity of objects clustered in the jet,
+the jet shape, and the impact parameters of the charged tracks with respect to the primary interaction vertex. Jets overlapping with 
+the selected leptons are not considered in the analysis.
+
+The selected events are required to contain at least two jets with $\pt > 30\GeV$ and $\abs{\eta} < 2.4$. At least one of these jets must 
+be consistent with containing the decay of a heavy-flavor hadron, as identified using the medium operating point of the combined secondary 
+vertex (CSVv2) bottom quark (b~quark) tagging algorithm~\cite{ref:btag}. We refer to such jets as b-tagged jets. The efficiency of this algorithm 
+for b~quark jets in the $\pt$ range 30--400\GeV varies between approximately 60 and 75\% for $\abs{\eta} < 2.4$. The nominal misidentification 
+rate for light-quark or gluon jets is approximately 1\%~\cite{ref:btag} for the chosen working point. Corrections are applied to the energy 
+measurements of jets to account for non-uniform detector response and  are propagated consistently as a correction to \ptvecmiss. 
+The corrected \MET\ magnitude is required to exceed 250\GeV. To reduce effects of instrumentally induced \MET\, we require that the
+azimuthal angle between \ptvecmiss and the closest of the two leading $E_{T}$ jets exceeeds 0.8 radians.
+
+To suppress single-lepton backgrounds originating from semi-leptonic \ttbar, 
+\wjets, and single top production processes, a requirement on the transverse mass of the lepton-neutrino system
+$\MT = \sqrt{2 \pt^{\ell} \MET (1 - cos(\phi))}$ is imposed, where $\phi$ is the angle between the transverse momentum of the lepton and \MET. 
+For the background processes containing a single leptonically-decaying $W$ boson, there is a kinematic endpoint $M_{T} < M_{W}$, which can be 
+blurred by limited detector resolution and off-shell $W$ mass effects. In this analysis we require $M_{T} > 150\GeV$, which significantly reduces 
+single-lepton backgrounds. 
+
+The residual background is dominated by dilepton \ttbar and single top events, where one of the leptons is not reconstructed and the 
+presence of the additional neutrino from the second leptonically-decaying $W$ boson allows the event to pass the $M_{T}$ requirement.
+In order to reduce this background, we apply loose lepton reconstruction requirements to look for the presence of second electon or muon
+with $\pt > 5\GeV$, and reject the event if such a lepton is found. Moreover, events are rejected if, in addition to the selected lepton,
+they contain reconstructed hadronic tau decay with $\pt > 20\GeV$ or an isolated track with $\pt > 10\GeV$.
+
+
+\subsection{Signal Region Definitions}
+\label{sec:presel}
+Kinematic properties and jet multiplicity in signal events depend on the decay mode of top squarks, as well as on the 
+mass splittings between top squark, chargino and neutralino. To achieve better overall sensitivity of the analysis, we optimize
+signal region selections separately for signal processes shown in~\ref{sgnProc} and for different mass splitting regions.
+
+As a basis of the search strategy for Eq.~(1a) and (1b) models, we require presence of at least four jets. 
+Events are then categorized based on the value of the \MTtW variables~\cite{Bai:2012gs}. The \MTtW variable attempts to reconstruct
+the events under the assumption that it has originated in a $\ttbar\rightarrow\ell\ell$ process with one undetected lepton and  
+helps to discriminate signal from the dominant dilepton \ttbar background. For large mass differences between the 
+top squark and the neutralino, $\Delta$M, the $\MTtW>200\GeV$ requirement significantly reduces the background while preserving good 
+signal efficiency. In contrast, for small $\Delta$M such a requirement would result in a loss of large fraction of the signal.
+To preserve sensitivity to both high and low $\Delta$M values, we keep all events but divide them in two orthogonal search regions 
+with $\MTtW>200\GeV$ and $\MTtW<200\GeV$.
+
+In events with heavy top squarks and small neutralino masses there is a significant probability for the two quarks to merge into a single 
+jet due to large boost of hadronically decaying $W$ boson. These events would fail four-jet requirement. To recover acceptance for such topology,
+ we define additional search region with 3 jets. Since this region targets signal events with large $\Delta$M values, only events with 
+$\MTtW>200\GeV$ are considered.
+
+To increase the sensitivity for the mixed decay scenario model in Eq.~(1c) with nearly degenerate chargino and neutralino, 
+a search region with exactly two jets is added. It was found that in these events with low jet multiplicity modified topness 
+variable:
+\begin{align} \label{eq:modtopness}
+t_\mathrm{mod} = \ln(\min S)~\text{ with }~ S(\vec{p}_W, p_{\nu,z}) = \frac{(m_W^2-(p_\nu+p_\ell)^2)^2}{a_W^4} + 
+\frac{(m_t^2 - (p_{b}+p_W)^2)^2}{a_t^4}
+\end{align}
+provides better dilepton \ttbar\ rejection than \MTtW. Here $a_W = 5\GeV$ and $a_t = 15\GeV$ are resolution parameters. 
+Events are required to have $t_{mod}>6.4$.
+
+Finally, events in each of the search regions described above are further classified into different signal regions 
+based on the value of \MET. Overall, we end up with nine signal regions summarized in Table.~\ref{tab:SR}.
+\begin{table}
+\begin{center}
+\topcaption{\label{tab:SR} Summary of the signal region definitions.}
+%\tiny
+%\setlength{\tabcolsep}{1pt}
+%\vspace{-4pt}
+\begin{tabular}{|r|r|r|rrr|}
+\hline
+$N_{Jets}$ & $M_\mathrm{T2}^W$ [GeV] & $t_\mathrm{mod}$ & \multicolumn{3}{c|}{$E_\mathrm{T}^\mathrm{miss}$ [GeV]} \\
+\hline
+$\geq4$ & $\leq 200$ & & $250$--$325$ & $>325$ & \\
+$\geq4$ & $> 200$ & & $250$--$350$ & $350$--$450$ & $>450$ \\
+\hline
+$=3$ & $>200$ & & $250$--$350$ & $>350$ & \\
+\hline
+$=2$ & & $>6.4$ & $250$--$350$ & $>350$ & \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsection{Signal and background simulation}
+\label{sec:mc}
+
+Signal samples of top squark pair production are generated with \MADGRAPH V5 Monte Carlo (MC) event 
+generator interfaced with Pythia V8.1. Background samples of \ttbar\ and single top events are generated using \POWHEG 
+with a top quark mass of $m_\cPqt=172.5$~\GeV, the CTEQ6M parton distribution functions (PDF), 
+and the parton showering and fragmentation performed using Pythia V8.1.
+Samples of \wjets, $\ttbar+\text{boson}$, diboson ($\PW\PW$, $\PW\cPZ$, and $\cPZ\cPZ$), and triboson,
+events are generated with \MADGRAPH V5~\cite{Alwall:2011uj}.
+
+For both signal and background events, pileup interactions are simulated with \PYTHIA\ and superimposed on the hard collisions,
+using a pileup multiplicity distribution that reflects the luminosity profile of the analyzed data.
+The CMS detector response is simulated using a \GEANTfour-based model~\cite{Geant}.
+The simulated events are reconstructed and analyzed with the same software used to process the collision data.
+
+The measured trigger efficiencies are used to weight the simulated events to account for the trigger requirement.
+Small differences between the b~tagging efficiencies measured in data and simulation~\cite{ref:btag} are 
+corrected using data-to-simulation scale factors to adjust the b~tagging probability in simulated events.
+Lepton selection efficiencies (reconstruction, identification, and isolation) are found to be consistent between data and 
+simulation.
+
